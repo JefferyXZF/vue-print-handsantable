@@ -1,18 +1,16 @@
 <template>
   <div id="app">
-    {{ print.name }}
+    <custom-print />
   </div>
 </template>
 
 <script>
 
-import print from '../print/index'
-
 export default {
   name: 'App',
   data () {
     return {
-      print
+
     }
   }
 

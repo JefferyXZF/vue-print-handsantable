@@ -1,6 +1,6 @@
 {
   "name": "vue-print-handsontable",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "vue print with handsontable",
   "main":"lib/vue-print-handsontable.umd.min.js",
   "keyword":"vue print handsontable",
@@ -11,7 +11,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-print-handsontable --dest lib print/index.js"
+    "lib": "vue-cli-service build --target lib --name vue-print-handsontable --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
