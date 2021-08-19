@@ -1,5 +1,9 @@
 const path = require('path')
 
+function resolve (dir) {
+  return path.resolve(__dirname, dir)
+}
+
 module.exports = {
   // 修改 src 为 examples
   pages: {
@@ -12,12 +16,19 @@ module.exports = {
   css: {
     extract: false
   },
-  pluginOptions: {
-    'style-resources-loader': {
-      preProcessor: 'sass',
-      patterns: [
-        path.resolve(__dirname, './packages/theme-css/*.scss') // .scss文件所在目录
-      ]
+  // pluginOptions: {
+  //   'style-resources-loader': {
+  //     preProcessor: 'sass',
+  //     patterns: [
+  //       resolve('./packages/theme-css/*.scss') // .scss文件所在目录
+  //     ]
+  //   }
+  // },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@scss': resolve('./packages/theme-scss')
+      }
     }
   },
   // 扩展 webpack 配置，使 packages 加入编译
@@ -33,5 +44,16 @@ module.exports = {
         // 修改它的选项...
         return options
       })
+      .end()
+
+    // scss
+    config.module
+      .rule('scss')
+      .use('sass-loader')
+      .tap((options) => {
+        // options.outputStyle = 'expanded'
+        return options
+      })
+      .end()
   }
 }

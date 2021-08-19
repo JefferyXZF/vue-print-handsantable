@@ -15,5 +15,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../../theme-scss/custom-print/customPrint.scss'
+ @import '../../theme-scss/custom-print/sideDrag.scss'
 </style>
